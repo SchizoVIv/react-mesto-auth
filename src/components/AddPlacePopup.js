@@ -5,10 +5,14 @@ export default function AddPlacePopup(props) {
   const [placeName, setPlaceName] = React.useState("")
   const [placeLink, setPlaceLink] = React.useState("")
 
+
+
   React.useEffect(() => {
-    setPlaceName("")
-    setPlaceLink("")
-  }, [props.isOpen])
+    if (props.isOpen) {
+      setPlaceName("");
+      setPlaceLink("");
+    }
+  }, [props.isOpen]);
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -25,6 +29,12 @@ export default function AddPlacePopup(props) {
   function handleChangePlaceLink(e) {
     setPlaceLink(e.target.value)
   }
+
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     resetForm();
+  //   }
+  // }, [isOpen, resetForm]);
 
   return (
     <PopupWithForm
@@ -45,6 +55,7 @@ export default function AddPlacePopup(props) {
         minLength={2}
         maxLength={30}
         required
+        value={placeName || ''}
         onChange={handleChangePlaceName} />
       <span className="popup__input-error popup__input-error_type_inputNameСard" />
       <input
@@ -55,6 +66,7 @@ export default function AddPlacePopup(props) {
         id="inputAboutСard"
         placeholder="Ссылка на картинку"
         required
+        value={placeLink || ''}
         onChange={handleChangePlaceLink} />
       <span className="popup__input-error popup__input-error_type_inputAboutСard" />
     </PopupWithForm>

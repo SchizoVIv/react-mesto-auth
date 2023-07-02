@@ -57,7 +57,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("кек")
     checkToken()
     //eslint-disable-next-line
   }, [])
@@ -174,7 +173,6 @@ function App() {
     auth
       .login(email, password)
       .then((res) => {
-        console.log(res)
         localStorage.setItem("jwt", res.token)
         setEmail(email)
         setLoggingIn(true);
@@ -190,7 +188,6 @@ function App() {
 
   function checkToken() {
     const jwt = localStorage.getItem("jwt")
-    console.log(jwt)
     if (jwt){
       auth
         .getContent(jwt)

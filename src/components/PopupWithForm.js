@@ -13,7 +13,6 @@ function PopupWithForm(props) {
           className="popup__content"
           name={props.name}
           id={props.id}
-          noValidate
           onSubmit={props.onSubmit}>
           <fieldset className="popup__fieldset">
             {props.children}

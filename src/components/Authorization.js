@@ -32,6 +32,7 @@ export default function Authorization(props) {
             type="email"
             placeholder="Email"
             onChange={handleEmailChange}
+            value={emailValue || ''}
             />
           <input
             className="authorization__input authorization__password"
@@ -39,6 +40,7 @@ export default function Authorization(props) {
             placeholder="Пароль"
             // minlength="8"
             onChange={handlePasswordChange}
+            value={passwordValue || ''}
             />
           <button
             className="authorization__button"

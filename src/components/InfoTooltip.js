@@ -1,5 +1,5 @@
 import union from "../image/Union.svg"
-import UnionZero from "../image/UnionZero.svg"
+import unionZero from "../image/UnionZero.svg"
 export default function InfoTooltip(props) {
   return(
     <section className={`popup popup-${props.name} ${props.isOpen ? 'popup_opened' : ''}`}>
@@ -11,7 +11,7 @@ export default function InfoTooltip(props) {
           onClick={props.close} />
         <img
           className="popup__image-union"
-          src={props.isRegisterMessage ? union : UnionZero}
+          src={props.isRegisterMessage ? union : unionZero}
           alt={props.isRegisterMessage ? 'Успешная регистрация' : 'Ошибка регистрации'} />
         <h2 className="popup__title popup__title_register">{props.isRegisterMessage ? 'Вы успешно зарегистрировались!' : 'Что-то пошло не так! Попробуйте ещё раз.'}</h2>
 

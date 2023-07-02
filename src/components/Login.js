@@ -5,8 +5,6 @@ import {  Redirect } from "react-router-dom";
 export default function Login(props) {
 
   function handleSubmit(email, password) {
-    console.log(email)
-    console.log(password)
     props.onLogin(email, password);
   }
 

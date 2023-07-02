@@ -17,10 +17,6 @@ export default function EditAvatarPopup(props) {
     });
   }
 
-  function handleChangeAvatar() {
-    return avatarRef.current.value
-  }
-
   return (
     <PopupWithForm
       name="edit-avatar"
@@ -40,7 +36,7 @@ export default function EditAvatarPopup(props) {
         placeholder="Введите ссылку URL"
         required
         ref={avatarRef}
-        onChange={handleChangeAvatar} />
+         />
       <span className="popup__input-error popup__input-error_type_ignputAvatar" />
     </PopupWithForm>
   )
